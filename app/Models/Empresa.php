@@ -14,6 +14,27 @@ class Empresa extends Model
         'nome',
         'logo',
         'tipo',
+        'users_id',
     ];
+
+    public function dono()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function clientes()
+    {
+        return $this->hasMany(Cliente::class);
+    }
+
+    public function servicos()
+    {
+        return $this->hasMany(Servico::class);
+    }
+
+    public function atendimentos()
+    {
+        return $this->hasMany(Atendimento::class);
+    }
 
 }

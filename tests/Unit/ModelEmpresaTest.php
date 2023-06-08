@@ -26,13 +26,13 @@ class ModelEmpresa extends TestCase
 
     public function test_empresaCount()
     {
-        $this->seed();
+        \App\Models\Empresa::factory(10)->create();
         $this->assertDatabaseCount('empresas', 10);
     }
 
     public function test_userCount()
     {
-        $this->seed();
+        \App\Models\User::factory(10)->create();
         $this->assertDatabaseCount('users', 10);
     }
 
