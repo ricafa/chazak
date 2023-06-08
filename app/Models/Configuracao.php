@@ -9,6 +9,8 @@ class Configuracao extends Model
 {
     use HasFactory;
 
+    protected $table = "configuracoes";
+
     protected $fillable = [
         'users_id',
         'cor_tema',

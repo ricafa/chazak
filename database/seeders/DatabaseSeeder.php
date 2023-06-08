@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        if (User::count() = 0)
+        $count = User::count();
+        if ($count = 0)
         {
             $user = User::create([
                 'name'      => 'first',
@@ -24,7 +25,8 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        if (Empresa::count() = 0)
+        $count = Empresa::count();
+        if ($count = 0)
         {
             Empresa::create([
                 'nome'      => 'Chazak Sistemas Práticos',

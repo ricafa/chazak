@@ -2,10 +2,10 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\Empresa;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class EmpresaFactory extends Factory
+class ClienteFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,9 +16,10 @@ class EmpresaFactory extends Factory
     {
         return [
             'nome' => $this->faker->name(),
-            'logo' => $this->faker->filePath(),
-            'tipo' => $this->faker->numberBetween(0,2),
-            'users_id' => (User::factory()->create())->id,
+            'nascimento' => $this->faker->date(),
+            'email' => $this->faker->email(),
+            'celular' => $this->faker->phoneNumber(),
+            'empresas_id' => (Empresa::factory()->create())->id,
         ];
     }
 }
