@@ -23,6 +23,11 @@ class DatabaseSeeder extends Seeder
                 'email'     => 'ricke.droid@gmail.com',
                 'password'  => md5('chazak123123'),
             ]);
+            $user->save();
+            echo "Usuário criada com sucesso \n";
+        }
+        else{
+            echo "Usuário já existente \n";
         }
 
         $count = Empresa::count();
@@ -34,6 +39,10 @@ class DatabaseSeeder extends Seeder
                 'logo'      => 'admin',
                 'users_id'  => $user->id,
             ]);
+            echo "Empresa criada com sucesso \n";
+        }
+        else{
+            echo "Empresa já existente \n";
         }
     }
 }
