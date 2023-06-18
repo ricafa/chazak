@@ -59,7 +59,7 @@ class ClienteController extends Controller
 
     public function destroy($id)
     {
-        $cliente = Cliente::findOrDie($id);
+        $cliente = Cliente::find($id);
         $nome = $cliente->nome;
         $cliente->delete();
         return view('clientes.index')->with('success','Cliente '.$nome.' excluído com sucesso!');

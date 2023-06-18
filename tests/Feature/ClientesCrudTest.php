@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Integration;
 
+use App\Models\Cliente;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -25,6 +26,8 @@ class Clientes extends TestCase
     }
     public function test_clientes_update_ok()
     {
+        $cliente = Cliente::factory()->create();
+        $cliente->save();
         $response = $this->get('/clientes/1');
         $response->assertStatus(200);
     }
